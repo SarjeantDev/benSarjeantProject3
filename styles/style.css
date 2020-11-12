@@ -403,7 +403,8 @@ header {
 
 .sectionGameTwo, .sectionGameThree, .sectionGameFour {
   width: 100%;
-  height: 100vh;
+  height: auto;
+  min-height: 1080px;
   display: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -458,6 +459,10 @@ header {
   height: 225px;
 }
 
+.sectionGameOne {
+  background-color: #598392;
+}
+
 .sectionGameTwo {
   background-color: #01161E;
 }
@@ -488,5 +493,28 @@ header {
   }
   .cardButtonBlck, .cardButtonLow, .cardButtonOutside {
     margin: 0 0 25px;
+  }
+  .sectionGameTwo .gTwoCard {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  main .wrapper {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  main .wrapper h2 {
+    margin-top: 300px;
+  }
+  main .wrapper .centerCardContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .wrapper .gOneCard {
+    margin-bottom: 30px;
   }
 }

@@ -72,7 +72,8 @@
 
 .sectionGameTwo, .sectionGameThree, .sectionGameFour {
     width: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: 1080px;
     display: none;
     flex-wrap: wrap;
     flex-direction: column;
@@ -103,6 +104,10 @@
     }
 }
 
+.sectionGameOne {
+    background-color: #598392;  
+}
+
 .sectionGameTwo {
     background-color: #01161E;
     .gameTwoCardContainer {
@@ -111,37 +116,7 @@
 }
 .sectionGameThree {
     background-color: #124559;
-
 }
-
-
-// .sectionGameThree {
-
-//     flex-direction: row;
-//      .centerCardContainer {
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-evenly;
-//         .centerCardFlexChild {
-//             align-self: flex-start;
-//         }
-//         :nth-of-type(3) {
-//             visibility:hidden
-//         }
-//         .gameOneCardContainer {
-//             align-self: center;
-//             .gOneCard {
-//                 width: 200px;
-//                 height: 300px;
-//             }       
-
-//         }       
-//     }
-// }
-
-
-
-
 
 .sectionGameFour {
     background-color: #315969;
@@ -156,11 +131,31 @@
 
     .cardButtonRed, .cardButtonHigh, .cardButtonInbet {
         margin:0 0 20px;
-
     }
     
     .cardButtonBlck, .cardButtonLow, .cardButtonOutside {
         margin:0 0 25px;
+    }
 
+    .sectionGameTwo {
+        .gTwoCard {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    main .wrapper {
+        justify-content: space-evenly;
+
+        h2 {
+            margin-top: 300px;
+        }
+        .centerCardContainer {
+            flex-direction: column;
+        }
+        .gOneCard {
+            margin-bottom: 30px;
+        }
     }
 }
