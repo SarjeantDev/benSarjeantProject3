@@ -243,24 +243,13 @@ html {
   margin: 0 auto;
   max-width: 1440px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100vh;
 }
 
 #cardButton {
   padding: 40px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, p {
   padding: 0;
   margin: 0;
   text-align: center;
@@ -308,8 +297,18 @@ h4 {
 
 header {
   height: 100vh;
-  min-height: 690px;
+  min-height: 880px;
   background-color: #598392;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .centerCardContainer {
@@ -379,11 +378,11 @@ header {
 
 .cardButtonRed:hover, .cardButtonHigh:hover, .cardButtonInbet:hover,
 .cardButtonRed:focus, .cardButtonHigh:focus, .cardButtonInbet:focus {
-  background-color: #dfdfdf;
+  background-color: #c8c8c8;
 }
 
 .cardButtonRed:active, .cardButtonHigh:active, .cardButtonInbet:active {
-  background-color: #bebebe;
+  background-color: #aaaaaa;
 }
 
 .cardButtonBlck, .cardButtonLow, .cardButtonOutside {
@@ -406,6 +405,12 @@ header {
   height: auto;
   min-height: 1080px;
   display: none;
+}
+
+.sectionGameTwo .wrapper, .sectionGameThree .wrapper, .sectionGameFour .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: vertical;
@@ -415,13 +420,6 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.sectionGameTwo, .sectionGameThree {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 .sectionGameTwo .centerCardContainer, .sectionGameThree .centerCardContainer {
@@ -461,6 +459,7 @@ header {
 
 .sectionGameOne {
   background-color: #598392;
+  width: 100%;
 }
 
 .sectionGameTwo {
@@ -477,6 +476,28 @@ header {
 
 .sectionGameFour {
   background-color: #315969;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer p {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 @media (max-width: 600px) {

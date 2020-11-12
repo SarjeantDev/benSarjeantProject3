@@ -15,9 +15,9 @@ rideTheBusApp.nextGameSection = "";
 // function to scroll to new section when won
 rideTheBusApp.scrollTo = (sectionNum) => {
     $("body,html").animate({
-            scrollTop: $(sectionNum).offset().top
-        }, 800)
-}; 
+        scrollTop: $(`${sectionNum} h2`).offset().top
+    }, 2000)
+};
 
 // function to randomize card 
 rideTheBusApp.randomizer = (optionArray) => {
@@ -26,12 +26,12 @@ rideTheBusApp.randomizer = (optionArray) => {
 };
 
 // function for when a button is clicked
-rideTheBusApp.buttonClickFunc = function() {
+rideTheBusApp.buttonClickFunc = function () {
     userClickedButton = $(this).text();
     newValue = rideTheBusApp.randomizer(rideTheBusApp.cardValues);
     newSuit = rideTheBusApp.randomizer(rideTheBusApp.cardSuits);
     newCardLink = String("./assets/" + newValue + newSuit + ".png");
-   
+
     // reformatting aces/jacks/queens/kings to numbers
     if (newValue === "J") {
         newValue = 11;
@@ -90,10 +90,11 @@ rideTheBusApp.gameTwo = () => {
     } else if ((gameOneValue > gameTwoValue) & userClickedButton === "Lower") {
         $(nextGameSection).css("display", "flex");
         rideTheBusApp.scrollTo(nextGameSection);
-    } else {
-        alert("Sorry you lost! Try again.");
-        rideTheBusApp.backToStart();
-    }; 
+    }
+    // else {
+    //     alert("Sorry you lost! Try again.");
+    //     rideTheBusApp.backToStart();
+    // }; 
 }
 
 // function for game three
@@ -119,26 +120,34 @@ rideTheBusApp.gameThree = () => {
     ) & userClickedButton === "Outside") {
         $(nextGameSection).css("display", "flex");
         rideTheBusApp.scrollTo(nextGameSection);
-    } else {
-        alert("Sorry you lost! Try again.");
-        rideTheBusApp.backToStart();
-    };
+    }
+    // else {
+    //     alert("Sorry you lost! Try again.");
+    //     rideTheBusApp.backToStart();
+    // };
 };
 
 rideTheBusApp.gameFour = () => {
     const winningMsg = "Congratulations you won!! Woo!";
     if (newSuit === "H" & userClickedButton === "Heart") {
         alert(winningMsg);
+        rideTheBusApp.fireworks();
     } else if (newSuit === "S" & userClickedButton === "Spade") {
         alert(winningMsg);
+        rideTheBusApp.fireworks();
     } else if (newSuit === "D" & userClickedButton === "Diamond") {
         alert(winningMsg);
+        rideTheBusApp.fireworks();
     } else if (newSuit === "C" & userClickedButton === "Club") {
         alert(winningMsg);
-    } else {
-        alert("Sorry you lost! Try again.");
-        rideTheBusApp.backToStart();
+        rideTheBusApp.fireworks();
+
     }
+    // else {
+    //     alert("Sorry you lost! Try again.");
+    //     rideTheBusApp.backToStart();
+
+    // }
 }
 
 rideTheBusApp.backToStart = () => {
@@ -149,6 +158,14 @@ rideTheBusApp.backToStart = () => {
 
 rideTheBusApp.resetCards = () => {
     $(".mainMovingCard").attr("src", "./assets/backOfCard.png");
+}
+
+rideTheBusApp.fireworks = () => {
+    $('.sectionGameFour').fireworks({
+        opacity: 0.9,
+        width: '100%',
+        height: '100%'
+    });
 }
 
 rideTheBusApp.turnOffSections = () => {
@@ -163,7 +180,7 @@ rideTheBusApp.init = () => {
 }
 
 // check to make sure document is ready and run init function
-$(function() {
+$(function () {
     rideTheBusApp.init();
 });
 
