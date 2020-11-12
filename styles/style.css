@@ -1,0 +1,492 @@
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: .35em .75em .625em;
+}
+
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+#cardButton {
+  padding: 40px;
+}
+
+h1, h2, h3, h4 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: whitesmoke;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 10rem;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 3.5rem;
+  width: 100%;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+header h2:nth-of-type(1) {
+  font-style: italic;
+  font-size: 1.75rem;
+  width: 100%;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 2rem;
+  width: 75%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin: -20px 0 10px;
+}
+
+header {
+  height: 100vh;
+  min-height: 690px;
+  background-color: #598392;
+}
+
+.centerCardContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.centerCardFlexChild {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-bottom: 35px;
+}
+
+.centerCardFlexChild img {
+  width: 200px;
+  height: auto;
+}
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 5s all;
+  transition: 5s all;
+}
+
+.cardButton {
+  height: 50px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px grey;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.cardButtonRed, .cardButtonHeart, .cardButtonDiam, .redFont {
+  color: #D00000;
+}
+
+.cardButtonBlck, .cardButtonSpade, .cardButtonClub, .blackFont {
+  color: #000000;
+}
+
+.cardButtonRed, .cardButtonHigh, .cardButtonInbet {
+  margin: 0 35px 0 0;
+  background-color: whitesmoke;
+  width: 150px;
+}
+
+.cardButtonRed:hover, .cardButtonHigh:hover, .cardButtonInbet:hover,
+.cardButtonRed:focus, .cardButtonHigh:focus, .cardButtonInbet:focus {
+  background-color: #dfdfdf;
+}
+
+.cardButtonRed:active, .cardButtonHigh:active, .cardButtonInbet:active {
+  background-color: #bebebe;
+}
+
+.cardButtonBlck, .cardButtonLow, .cardButtonOutside {
+  margin-left: 35px;
+  background-color: whitesmoke;
+  width: 150px;
+}
+
+.cardButtonBlck:hover, .cardButtonLow:hover, .cardButtonOutside:hover,
+.cardButtonBlck:focus, .cardButtonLow:focus, .cardButtonOutside:focus {
+  background-color: #dfdfdf;
+}
+
+.cardButtonBlck:active, .cardButtonLow:active, .cardButtonOutside:active {
+  background-color: #bebebe;
+}
+
+.sectionGameTwo, .sectionGameThree, .sectionGameFour {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sectionGameTwo, .sectionGameThree {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.sectionGameTwo .centerCardContainer, .sectionGameThree .centerCardContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.sectionGameTwo .centerCardContainer .centerCardFlexChild, .sectionGameThree .centerCardContainer .centerCardFlexChild {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.sectionGameTwo .centerCardContainer .gameOneCardContainer, .sectionGameTwo .centerCardContainer .gameTwoCardContainer, .sectionGameThree .centerCardContainer .gameOneCardContainer, .sectionGameThree .centerCardContainer .gameTwoCardContainer {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+}
+
+.sectionGameTwo .centerCardContainer .gameOneCardContainer .gOneCard, .sectionGameTwo .centerCardContainer .gameTwoCardContainer .gOneCard, .sectionGameThree .centerCardContainer .gameOneCardContainer .gOneCard, .sectionGameThree .centerCardContainer .gameTwoCardContainer .gOneCard {
+  width: 150px;
+  height: 225px;
+}
+
+.sectionGameTwo .centerCardContainer .gameOneCardContainer .gTwoCard, .sectionGameTwo .centerCardContainer .gameTwoCardContainer .gTwoCard, .sectionGameThree .centerCardContainer .gameOneCardContainer .gTwoCard, .sectionGameThree .centerCardContainer .gameTwoCardContainer .gTwoCard {
+  width: 150px;
+  height: 225px;
+}
+
+.sectionGameTwo {
+  background-color: #01161E;
+}
+
+.sectionGameTwo .gameTwoCardContainer {
+  visibility: hidden;
+}
+
+.sectionGameThree {
+  background-color: #124559;
+}
+
+.sectionGameFour {
+  background-color: #315969;
+}
+
+@media (max-width: 600px) {
+  .buttonContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .cardButtonRed, .cardButtonHigh, .cardButtonInbet {
+    margin: 0 0 20px;
+  }
+  .cardButtonBlck, .cardButtonLow, .cardButtonOutside {
+    margin: 0 0 25px;
+  }
+}
