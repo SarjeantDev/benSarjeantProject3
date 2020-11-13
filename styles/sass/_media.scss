@@ -1,0 +1,38 @@
+
+
+@media (max-width: 600px) {
+    .buttonContainer {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .cardButtonRed, .cardButtonHigh, .cardButtonInbet {
+        margin:0 0 20px;
+    }
+    
+    .cardButtonBlck, .cardButtonLow, .cardButtonOutside {
+        margin:0 0 25px;
+    }
+
+    .sectionGameTwo {
+        .gTwoCard {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    main .wrapper {
+        justify-content: space-evenly;
+
+        h2 {
+            margin-top: 300px;
+        }
+        .centerCardContainer {
+            flex-direction: column;
+        }
+        .gOneCard {
+            margin-bottom: 30px;
+        }
+    }
+}
