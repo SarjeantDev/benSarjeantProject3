@@ -537,6 +537,12 @@ footer p {
 }
 
 @media (max-width: 450px) {
+  h1 {
+    margin-top: 400px;
+  }
+  .sectionGameTwo h2 {
+    margin-top: 300px;
+  }
   main .wrapper {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
@@ -550,11 +556,5 @@ footer p {
   }
   main .wrapper .gOneCard {
     margin-bottom: 30px;
-  }
-  h1 {
-    margin-top: 150px;
-  }
-  .sectionGameTwo h2 {
-    margin-top: 200px;
   }
 }

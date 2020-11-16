@@ -35,6 +35,12 @@
 
 // START OF 450PX SCREEN
 @media (max-width: 450px) {
+    h1 {
+        margin-top: 400px;
+    }
+    .sectionGameTwo h2 {
+        margin-top: 300px;
+    }
     main .wrapper {
         justify-content: space-evenly;
         .centerCardContainer {
@@ -43,11 +49,5 @@
         .gOneCard {
             margin-bottom: 30px;
         }
-    }
-    h1 {
-         margin-top: 250px;
-    }
-    .sectionGameTwo h2 {
-        margin-top: 350px;
     }
 }
