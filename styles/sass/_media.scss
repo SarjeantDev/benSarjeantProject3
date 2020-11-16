@@ -35,11 +35,8 @@
 
 // START OF 450PX SCREEN
 @media (max-width: 450px) {
-    h1 {
-        margin-top: 400px;
-    }
-    .sectionGameTwo h2 {
-        margin-top: 400px;
+    .sectionGameTwo .wrapper {
+        padding-top: 100px;
     }
     main .wrapper {
         justify-content: space-evenly;
