@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ben Sarjeant - Proj 3</title>
+    <!-- IMPORT OF STYLING SHEET -->
     <link rel="stylesheet" href="./styles/style.css" type="text/css">
 </head>
 <body>
+    <!-- START OF HEADER -->
     <header>
         <!-- START OF WRAPPER -->
         <div class="wrapper">
@@ -31,102 +33,110 @@
             </section>
         </div>
     </header>
-
-
+    <!-- END OF HEADER --> 
+    
+    
+    <!-- START OF MAIN -->
     <main>
-        
+        <!-- START OF GAME 2: Higher/Lower-->
+        <section class="sectionGameTwo">
+            <!-- START OF WRAPPER -->
+            <div class="wrapper">
+                <h2>Game 2: Higher or Lower?</h2>
+                <h3>Will this card be higher or lower than Game 1 (Aces are low)?</h3>
+                <div class="centerCardContainer">
 
-            <!-- START OF GAME 2: Higher/Lower-->
-            <section class="sectionGameTwo">
-                <!-- START OF WRAPPER -->
-                <div class="wrapper">
-                    <h2>Game 2: Higher or Lower?</h2>
-                    <h3>Will this card be higher or lower than Game 1 (Aces are low)?</h3>
-                    <div class="centerCardContainer">
-
-                        <div class="gameOneCardContainer">
-                            <h4>Game 1: Card</h4>
-                            <img class="gOneCard" src="./assets/backOfCard.png" alt="">
-                        </div>
-                        <div class="centerCardFlexChild">
-                            <img class="mainMovingCard" src="./assets/backOfCard.png" alt="">
-                        </div>
-                        <div class="gameTwoCardContainer">
-                            <img class="gTwoCard" src="./assets/backOfCard.png" alt="">
-                        </div>
+                    <div class="gameOneCardContainer">
+                        <h4>Game 1: Card</h4>
+                        <img class="gOneCard" src="./assets/backOfCard.png" alt="">
                     </div>
-
-                    <div class="buttonContainer">
-                        <button class="cardButton cardButtonHigh" value="high">Higher</button>
-                        <button class="cardButton cardButtonLow" value="low">Lower</button>
+                    <div class="centerCardFlexChild">
+                        <img class="mainMovingCard" src="./assets/backOfCard.png" alt="">
+                    </div>
+                    <div class="gameTwoCardContainer">
+                        <img class="gTwoCard" src="./assets/backOfCard.png" alt="">
                     </div>
                 </div>
-                <!-- END OF WRAPPER -->
-            </section>
-            <!-- END OF GAME 2: Higher/Lower -->
+
+                <div class="buttonContainer">
+                    <button class="cardButton cardButtonHigh" value="high">Higher</button>
+                    <button class="cardButton cardButtonLow" value="low">Lower</button>
+                </div>
+            </div>
+            <!-- END OF WRAPPER -->
+        </section>
+        <!-- END OF GAME 2: Higher/Lower -->
 
 
-            <!-- START OF GAME 3: In-between/outside -->
-            <section class="sectionGameThree">
-                <div class="wrapper">
-                    <h2>Game 3: In-Between or Outside?</h2>
-                    <h3>Will this card be in-between or outside the first two cards?</h3>
-                    
-                    <div class="centerCardContainer">
-                    
-                        <div class="gameOneCardContainer">
-                            <h4>Game 1: Card</h4>
-                            <img class="gOneCard" src="./assets/backOfCard.png" alt="">
-                        </div>
-                        <div class="centerCardFlexChild">
-                            <img class="mainMovingCard" src="./assets/backOfCard.png" alt="">
-                        </div>
-                        <div class="gameTwoCardContainer">
-                            <h4>Game 2: Card</h4>
-                            <img class="gTwoCard" src="./assets/backOfCard.png" alt="">
-                        </div>
+        <!-- START OF GAME 3: In-between/outside -->
+        <section class="sectionGameThree">
+            <div class="wrapper">
+                <h2>Game 3: In-Between or Outside?</h2>
+                <h3>Will this card be in-between or outside the first two cards?</h3>
+                
+                <div class="centerCardContainer">
+                
+                    <div class="gameOneCardContainer">
+                        <h4>Game 1: Card</h4>
+                        <img class="gOneCard" src="./assets/backOfCard.png" alt="">
                     </div>
-                    
-                    <div class="buttonContainer">
-                        <button class="cardButton cardButtonInbet" value="inbet">In-Between</button>
-                        <button class="cardButton cardButtonOutside" value="outside">Outside</button>
+                    <div class="centerCardFlexChild">
+                        <img class="mainMovingCard" src="./assets/backOfCard.png" alt="">
+                    </div>
+                    <div class="gameTwoCardContainer">
+                        <h4>Game 2: Card</h4>
+                        <img class="gTwoCard" src="./assets/backOfCard.png" alt="">
                     </div>
                 </div>
-                <!-- END OF WRAPPER -->
-            </section>
-            <!-- END OF GAME 3: In-between/outside -->
+                
+                <div class="buttonContainer">
+                    <button class="cardButton cardButtonInbet" value="inbet">In-Between</button>
+                    <button class="cardButton cardButtonOutside" value="outside">Outside</button>
+                </div>
+            </div>
+            <!-- END OF WRAPPER -->
+        </section>
+        <!-- END OF GAME 3: In-between/outside -->
 
 
-            <!-- START OF GAME 4: Which suit -->
-            <section class="sectionGameFour">
-                <div class="wrapper">
-                    <h2>Game 4: Guess the Suit!</h2>
-                    <div class="centerCardContainer">
-                        <h3>Will this card be <span class="redFont">red</span> (hearts/diamons) or <span class="blackFont">black</span>
-                            (clubs/spades)?</h3>
-                        <div class="centerCardFlexChild">
-                            <img class="mainMovingCard" src="./assets/backOfCard.png" alt="">
-                        </div>
-                    </div>
-                    
-                    <div class="buttonContainer">
-                        <button class="cardButton cardButtonHeart" value="heart">Heart</button>
-                        <button class="cardButton cardButtonSpade" value="spade">Spade</button>
-                        <button class="cardButton cardButtonDiam" value="diamond">Diamond</button>
-                        <button class="cardButton cardButtonClub" value="club">Club</button>
+        <!-- START OF GAME 4: Which suit -->
+        <section class="sectionGameFour">
+            <div class="wrapper">
+                <h2>Game 4: Guess the Suit!</h2>
+                <div class="centerCardContainer">
+                    <h3>Will this card be <span class="redFont">red</span> (hearts/diamons) or <span class="blackFont">black</span>
+                        (clubs/spades)?</h3>
+                    <div class="centerCardFlexChild">
+                        <img class="mainMovingCard" src="./assets/backOfCard.png" alt="">
                     </div>
                 </div>
-                <!-- END OF WRAPPER -->
-            </section>
-            <!-- END OF GAME 4: Which suit -->
+                
+                <div class="buttonContainer">
+                    <button class="cardButton cardButtonHeart" value="heart">Heart</button>
+                    <button class="cardButton cardButtonSpade" value="spade">Spade</button>
+                    <button class="cardButton cardButtonDiam" value="diamond">Diamond</button>
+                    <button class="cardButton cardButtonClub" value="club">Club</button>
+                </div>
 
-        
+                <button class="cardButtonPlayAgain">Play Again?</button>
+            </div>
+            <!-- END OF WRAPPER -->
+        </section>
+        <!-- END OF GAME 4: Which suit -->
+
     </main>
+    <!-- END OF MAIN -->
+
+    <!-- FOOTER -->
     <footer>
         <p>Copyright © Ben Sarjeant | Juno College </p>
     </footer>
+    <!-- END OF FOOTER -->
+
+
+    <!-- IMPORT OF JQUERY AND RIDE THE BUS APP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-    <script src="script.js">
-    </script>
+    <script src="script.js"></script>
+
 </body>
 </html>

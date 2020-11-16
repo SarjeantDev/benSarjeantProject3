@@ -1,3 +1,5 @@
+// RIDE THE BUS GAME
+// BEN SARJEANT - PROJECT 3 @ JUNO COLLEGE
 // defining namesapce
 const rideTheBusApp = {};
 
@@ -14,14 +16,12 @@ rideTheBusApp.newCardLink = "";
 rideTheBusApp.gameSection = "";
 rideTheBusApp.nextGameSection = "";
 
-
 // function to scroll to new section when won
 rideTheBusApp.scrollTo = (sectionNum) => {
     $("body,html").animate({
         scrollTop: $(`${sectionNum}`).offset().top
     }, 2000)
 };
-
 
 // function to randomize card 
 rideTheBusApp.randomizer = (optionArray) => {
@@ -30,7 +30,7 @@ rideTheBusApp.randomizer = (optionArray) => {
 };
 
 
-// function for when a button is clicked
+// function to listen for a clicked button and execute the game function
 rideTheBusApp.buttonClick = function () {
     userClickedButton = $(this).text();
 
@@ -41,40 +41,49 @@ rideTheBusApp.buttonClick = function () {
     // combining both the new value and new suit returned from randomizer function to create a card source, folder with a full deck of cards is stored in assets 
     newCardLink = String("./assets/" + newValue + newSuit + ".png");
 
-    // reformatting aces/jacks/queens/kings to numbers in order to guage higher/lower & in-between/outside values
-    // change to switch / cases
-    if (newValue === "J") {
-        newValue = 11;
-    } else if (newValue === "Q") {
-        newValue = 12;
-    } else if (newValue === "K") {
-        newValue = 13;
-    } else if (newValue === "A") {
-        newValue = 14;
-    }
+    // switch statement to reformat aces/jacks/queens/kings to numbers in order to guage higher/lower & in-between/outside values
+    switch (newValue) {
+        case "J":
+            newValue = 11;
+            break;
+        case "Q":
+            newValue = 12;
+            break;
+        case "K":
+            newValue = 13;
+            break;
+        case "A":
+            newValue = 14;
+            break;
+    }    
 
     // finding the parent section of button thats being pressed
     // ex: returns gameSectionOne/gameSectionTwo/gameSectionThree
     gameSection = $(this).closest("section").attr("class");
 
-    // conditionals to dictate which game user is currently playing
-    // change to switch / cases
-    if (gameSection === "sectionGameOne") {
-        $(`.${gameSection} .mainMovingCard`).attr("src", newCardLink);
-        $(".gOneCard").attr("src", newCardLink);
-        rideTheBusApp.gameOne();
-    } else if (gameSection === "sectionGameTwo") {
-        $(`.${gameSection} .mainMovingCard`).attr("src", newCardLink);
-        $(".gTwoCard").attr("src", newCardLink);
-        rideTheBusApp.gameTwo();
-    } else if (gameSection === "sectionGameThree") {
-        $(`.${gameSection} .mainMovingCard`).attr("src", newCardLink);
-        rideTheBusApp.gameThree();
-    } else if (gameSection === "sectionGameFour") {
-        $(`.${gameSection} .mainMovingCard`).attr("src", newCardLink);
-        rideTheBusApp.gameFour();
+    // switch statement to dictate which game user is currently playing and execute that function while updating card visuals
+    switch (gameSection) {
+        case "sectionGameOne":
+            rideTheBusApp.updateMainCard();
+            $(".gOneCard").attr("src", newCardLink);
+            rideTheBusApp.gameOne();
+            break;
+        case "sectionGameTwo":
+            rideTheBusApp.updateMainCard();
+            $(".gTwoCard").attr("src", newCardLink);
+            rideTheBusApp.gameTwo();
+            break;
+        case "sectionGameThree":
+            rideTheBusApp.updateMainCard();
+            rideTheBusApp.gameThree();
+            break;
+        case "sectionGameFour":
+            rideTheBusApp.updateMainCard();
+            rideTheBusApp.gameFour();
+            break;
     }
-}
+ }
+ // end of buttonClicked func 
 
 
 // function for game one
@@ -90,6 +99,7 @@ rideTheBusApp.gameOne = () => {
         rideTheBusApp.winnerWinner();
     };
 }
+// end of game one func
 
 
 // function for game two
@@ -106,6 +116,7 @@ rideTheBusApp.gameTwo = () => {
         rideTheBusApp.loserLoser();
     }; 
 }
+// end of game two func
 
 
 // function for game three (is the value in between or outside)
@@ -113,26 +124,33 @@ rideTheBusApp.gameThree = () => {
     gameThreeValue = newValue;
     nextGameSection = ".sectionGameFour";
 
-    letNewGameArray = [gameOneValue, gameThreeValue, gameTwoValue];
+    // create new array to store each game value
+    letNewGameArray = [gameOneValue, gameTwoValue, gameThreeValue];
+    // sort new array in ascending order 
     letNewGameArray.sort((a, b) => a - b);
-    console.log(letNewGameArray);
 
-    if 
-        (letNewGameArray.indexOf(gameThreeValue) == 1 & userClickedButton === "In-Between") {
-        console.log("inbetwee")
-        // rideTheBusApp.winnerWinner();
+    // first conditional checking that game three value doesn't equal game one or game two (user loses)
+    if ((gameOneValue == gameThreeValue) || (gameTwoValue == gameThreeValue)) {
+        alert("Sorry you lost! Try again.");
+        rideTheBusApp.loserLoser();
 
+    // second conditional checking if game three value is in the middle of the the new array and user has pressed correct button (user wins)
     } else if 
-        ((
-            (letNewGameArray.indexOf(gameThreeValue) == 0) || (letNewGameArray.indexOf(gameThreeValue) == 2)
-        ) 
-     & userClickedButton === "Outside") {
-        console.log("outisde")
-        // rideTheBusApp.winnerWinner();
-    }// } else {
-    //     alert("Sorry you lost! Try again.");
-    //     rideTheBusApp.loserLoser();
-    // };
+        (letNewGameArray.indexOf(gameThreeValue) == 1 & 
+        userClickedButton === "In-Between") {
+        rideTheBusApp.winnerWinner();
+
+    // third conditional checking if game three value is of the the new array and user has pressed correct button 
+    } else if 
+        (((letNewGameArray.indexOf(gameThreeValue) == 0) || (letNewGameArray.indexOf(gameThreeValue) == 2)) & 
+        userClickedButton === "Outside") {
+        rideTheBusApp.winnerWinner();
+    
+    // last conditional to catch every other option
+    } else {
+        alert("Sorry you lost! Try again.");
+        rideTheBusApp.loserLoser();
+    };
 };
 
 
@@ -142,19 +160,50 @@ rideTheBusApp.gameFour = () => {
     if (newSuit === "H" & userClickedButton === "Heart") {
         rideTheBusApp.disableButtons();
         alert(winningMsg);
+        rideTheBusApp.showPlayAgainButton();
     } else if (newSuit === "S" & userClickedButton === "Spade") {
         rideTheBusApp.disableButtons();
         alert(winningMsg);
+        rideTheBusApp.showPlayAgainButton();
     } else if (newSuit === "D" & userClickedButton === "Diamond") {
         rideTheBusApp.disableButtons();
         alert(winningMsg);
+        rideTheBusApp.showPlayAgainButton();
     } else if (newSuit === "C" & userClickedButton === "Club") {
         rideTheBusApp.disableButtons();
         alert(winningMsg);
+        rideTheBusApp.showPlayAgainButton();
     } else {
         alert("Sorry you lost! Try again.");
         rideTheBusApp.loserLoser();
     }
+}
+
+
+// function to update main card 
+rideTheBusApp.updateMainCard = () => {
+    $(`.${gameSection} .mainMovingCard`).attr("src", newCardLink);
+}
+
+
+// function to show play again button
+rideTheBusApp.showPlayAgainButton = () => {
+    $('.cardButtonPlayAgain').css("display", "block");
+    $('.cardButtonPlayAgain').prop("disabled", false);
+    rideTheBusApp.playAgain();
+}
+
+
+// function to fire losing function when play again is selected
+rideTheBusApp.playAgain = () => {
+    $('.cardButtonPlayAgain').on("click", rideTheBusApp.loserLoser);
+    
+}
+
+
+// function to turn off play again button fater being clicked, included in loserLoser function
+rideTheBusApp.turnOffPlayAgain = () => {
+    $(".cardButtonPlayAgain").css("display", "none");
 }
 
 
@@ -181,6 +230,7 @@ rideTheBusApp.disableButtons = () => {
 }
 
 
+
 // function to enable all buttons
 rideTheBusApp.enableButtons = () => {
     $(".cardButton").prop("disabled", false);
@@ -193,6 +243,7 @@ rideTheBusApp.loserLoser = () => {
     rideTheBusApp.turnOffSections();
     rideTheBusApp.scrollTo(".sectionGameOne");
     rideTheBusApp.enableButtons();
+    rideTheBusApp.turnOffPlayAgain();
 }
 
 
@@ -206,13 +257,16 @@ rideTheBusApp.winnerWinner = () => {
     rideTheBusApp.scrollTo(nextGameSection);
 }
 
-
-
-// initalizing function
-rideTheBusApp.init = () => {
+// listening for clicked button to execute the button clicked function
+rideTheBusApp.buttonListener = () => {
     $(".cardButton").on("click", rideTheBusApp.buttonClick);
 }
 
+
+// initalizing function 
+rideTheBusApp.init = () => {
+    rideTheBusApp.buttonListener();
+}
 
 
 // check to make sure document is ready and run init function

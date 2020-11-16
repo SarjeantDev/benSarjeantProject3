@@ -221,7 +221,7 @@ html {
           box-sizing: inherit;
 }
 
-.sr-only {
+.srOnly {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -233,20 +233,6 @@ html {
           clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-.wrapper {
-  margin: 0 auto;
-  max-width: 1440px;
-  width: 100%;
-}
-
-#cardButton {
-  padding: 40px;
 }
 
 h1, h2, h3, h4, p {
@@ -295,6 +281,20 @@ h4 {
   margin: -20px 0 10px;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+}
+
+#cardButton {
+  padding: 40px;
+}
+
 header {
   height: 98vh;
   min-height: 880px;
@@ -326,7 +326,7 @@ header {
       align-content: center;
 }
 
-.centerCardFlexChild {
+.centerCardContainer .centerCardFlexChild {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -335,7 +335,7 @@ header {
   margin-bottom: 35px;
 }
 
-.centerCardFlexChild img {
+.centerCardContainer .centerCardFlexChild img {
   width: 200px;
   height: auto;
 }
@@ -431,13 +431,18 @@ header {
   transition: 5s all;
 }
 
-.cardButton {
-  height: 50px;
-  font-size: 2rem;
-  text-transform: uppercase;
-  text-shadow: 1px 1px grey;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
+.buttonContainer .cardButtonRed, .buttonContainer .cardButtonHigh, .buttonContainer .cardButtonInbet, .buttonContainer .cardButtonHeart,
+.buttonContainer .cardButtonSpade, .buttonContainer .cardButtonDiam {
+  margin: 0 35px 0 0;
+  background-color: whitesmoke;
+  width: 150px;
+}
+
+.buttonContainer .cardButtonBlck, .buttonContainer .cardButtonLow, .buttonContainer .cardButtonOutside, .buttonContainer .cardButtonSpade, .buttonContainer .cardButtonDiam,
+.buttonContainer .cardButtonClub {
+  margin-left: 35px;
+  background-color: whitesmoke;
+  width: 150px;
 }
 
 .cardButtonRed, .cardButtonHeart, .cardButtonDiam, .redFont {
@@ -448,74 +453,30 @@ header {
   color: #000000;
 }
 
-.cardButtonRed, .cardButtonHigh, .cardButtonInbet {
-  margin: 0 35px 0 0;
-  background-color: whitesmoke;
-  width: 150px;
-}
-
-.cardButtonRed:hover, .cardButtonHigh:hover, .cardButtonInbet:hover,
-.cardButtonRed:focus, .cardButtonHigh:focus, .cardButtonInbet:focus {
+.cardButton:hover, .cardButton:focus, .cardButtonPlayAgain:hover, .cardButtonPlayAgain:focus {
   background-color: #c8c8c8;
 }
 
-.cardButtonRed:active, .cardButtonHigh:active, .cardButtonInbet:active {
+.cardButton:active, .cardButtonPlayAgain:active {
   background-color: #aaaaaa;
 }
 
-.cardButtonBlck, .cardButtonLow, .cardButtonOutside {
-  margin-left: 35px;
-  background-color: whitesmoke;
+.cardButton, .cardButtonPlayAgain {
+  height: 50px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px grey;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.cardButtonPlayAgain {
+  margin-top: 50px;
   width: 150px;
-}
-
-.cardButtonBlck:hover, .cardButtonLow:hover, .cardButtonOutside:hover,
-.cardButtonBlck:focus, .cardButtonLow:focus, .cardButtonOutside:focus {
-  background-color: #dfdfdf;
-}
-
-.cardButtonBlck:active, .cardButtonLow:active, .cardButtonOutside:active {
-  background-color: #bebebe;
-}
-
-@media (max-width: 600px) {
-  .buttonContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-line-pack: center;
-        align-content: center;
-  }
-  .cardButtonRed, .cardButtonHigh, .cardButtonInbet {
-    margin: 0 0 20px;
-  }
-  .cardButtonBlck, .cardButtonLow, .cardButtonOutside {
-    margin: 0 0 25px;
-  }
-  .sectionGameTwo .gTwoCard {
-    display: none;
-  }
-}
-
-@media (max-width: 450px) {
-  main .wrapper {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-  }
-  main .wrapper h2 {
-    margin-top: 300px;
-  }
-  main .wrapper .centerCardContainer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  main .wrapper .gOneCard {
-    margin-bottom: 30px;
-  }
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: none;
 }
 
 footer {
@@ -539,4 +500,61 @@ footer {
 footer p {
   font-size: 1.2rem;
   margin: 0;
+}
+
+@media (max-width: 810px) {
+  .sectionGameFour .buttonContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .sectionGameFour .buttonContainer .cardButtonHeart, .sectionGameFour .buttonContainer .cardButtonSpade, .sectionGameFour .buttonContainer .cardButtonClub, .sectionGameFour .buttonContainer .cardButtonDiam {
+    margin: 0 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .buttonContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  .buttonContainer .cardButtonRed, .buttonContainer .cardButtonHigh, .buttonContainer .cardButtonInbet {
+    margin: 0 0 20px;
+  }
+  .buttonContainer .cardButtonBlck, .buttonContainer .cardButtonLow, .buttonContainer .cardButtonOutside {
+    margin: 0 0 25px;
+  }
+  .sectionGameTwo .gTwoCard {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  main .wrapper {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  main .wrapper .centerCardContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  main .wrapper .gOneCard {
+    margin-bottom: 30px;
+  }
+  h1 {
+    margin-top: 150px;
+  }
+  .sectionGameTwo h2 {
+    margin-top: 200px;
+  }
 }

@@ -1,12 +1,44 @@
-
+// BUTTON STYLES FOR BUTTONS WITHIN MAIN CONTAINER
 .buttonContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     transition: 5s all;
+
+    .cardButtonRed, .cardButtonHigh, .cardButtonInbet, .cardButtonHeart,
+    .cardButtonSpade, .cardButtonDiam {
+        margin: 0 35px 0 0;
+        background-color: whitesmoke;
+        width: 150px;
+    }
+
+    .cardButtonBlck, .cardButtonLow, .cardButtonOutside, .cardButtonSpade, .cardButtonDiam,
+    .cardButtonClub {
+        margin-left: 35px;
+        background-color: whitesmoke;
+        width: 150px;
+    }
 }
 
-.cardButton {
+// GENERAL COLORS FOR BUTTONS AND TEXT
+.cardButtonRed, .cardButtonHeart, .cardButtonDiam, .redFont {
+    color: #D00000;
+}
+.cardButtonBlck, .cardButtonSpade, .cardButtonClub, .blackFont {
+    color: #000000;
+}
+
+// HOVER, FOCUS, AND ACTIVE STYLES
+.cardButton:hover, .cardButton:focus, .cardButtonPlayAgain:hover, .cardButtonPlayAgain:focus {
+    background-color: rgb(200, 200, 200);
+}
+
+.cardButton:active, .cardButtonPlayAgain:active {
+    background-color: rgb(170, 170, 170);
+}
+    
+// GENERAL STYLING FOR BUTTONS AND SPECIFICALLY PLAY AGAIN BUTTON
+.cardButton, .cardButtonPlayAgain {
     height: 50px;
     font-size: 2rem;
     text-transform: uppercase;
@@ -14,40 +46,9 @@
     transition: 0.1s;
 }
 
-.cardButtonRed, .cardButtonHeart, .cardButtonDiam, .redFont {
-    color: #D00000;
-}
-
-.cardButtonBlck, .cardButtonSpade, .cardButtonClub, .blackFont {
-    color: #000000;
-}
-
-.cardButtonRed, .cardButtonHigh, .cardButtonInbet {
-    margin: 0 35px 0 0;
-    background-color: whitesmoke;
+.cardButtonPlayAgain {
+    margin-top: 50px;
     width: 150px;
-}
-
-.cardButtonRed:hover, .cardButtonHigh:hover, .cardButtonInbet:hover,
-.cardButtonRed:focus, .cardButtonHigh:focus, .cardButtonInbet:focus {
-    background-color: rgb(200, 200, 200);
-}
-.cardButtonRed:active, .cardButtonHigh:active, .cardButtonInbet:active {
-    background-color: rgb(170, 170, 170);
-}
-
-
-.cardButtonBlck, .cardButtonLow, .cardButtonOutside {
-    margin-left: 35px;
-    background-color: whitesmoke;
-    width: 150px;
-}
-
-.cardButtonBlck:hover, .cardButtonLow:hover, .cardButtonOutside:hover,
-.cardButtonBlck:focus, .cardButtonLow:focus, .cardButtonOutside:focus {
-    background-color: rgb(223, 223, 223);
-}
-
-.cardButtonBlck:active, .cardButtonLow:active, .cardButtonOutside:active {
-    background-color: rgb(190, 190, 190);
+    align-self: center;
+    display: none;  
 }

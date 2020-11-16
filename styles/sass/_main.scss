@@ -1,21 +1,22 @@
+// CONTAINER HOLDING MAIN MOVING CARD AND GAME ONE AND TWO CARDS
 .centerCardContainer {
     width: 100%;
-     display: flex;
-     flex-wrap:wrap;
-     flex-direction: column;
-     align-content: center;
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    align-content: center;
+    .centerCardFlexChild {    
+        align-self: center;
+        justify-self: center;
+        margin-bottom: 35px;
+        img {
+            width: 200px;
+            height: auto;
+        }
+    }
 }
 
-.centerCardFlexChild {    
-     align-self: center;
-     justify-self: center;
-     margin-bottom: 35px;
-     img {
-         width: 200px;
-         height: auto;
-     }
-}
-
+// GAMES TWO THREE AND FOUR STYLES
 .sectionGameTwo, .sectionGameThree, .sectionGameFour {
     width: 100%;
     height: auto;
@@ -29,6 +30,7 @@
     }
 }
 
+// GAMES TWO AND THREE FLEX STYLES
 .sectionGameTwo, .sectionGameThree {
      .centerCardContainer {
         display: flex;
